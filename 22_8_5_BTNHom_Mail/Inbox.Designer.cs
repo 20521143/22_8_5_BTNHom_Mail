@@ -32,7 +32,6 @@ namespace _22_8_5_BTNHom_Mail
             this.components = new System.ComponentModel.Container();
             this.btn_Exit = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.txb_UserName = new System.Windows.Forms.TextBox();
             this.txb_PassWord = new System.Windows.Forms.TextBox();
@@ -43,12 +42,15 @@ namespace _22_8_5_BTNHom_Mail
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_Exit
             // 
-            this.btn_Exit.Location = new System.Drawing.Point(443, 459);
+            this.btn_Exit.Location = new System.Drawing.Point(714, 666);
             this.btn_Exit.Name = "btn_Exit";
             this.btn_Exit.Size = new System.Drawing.Size(169, 23);
             this.btn_Exit.TabIndex = 1;
@@ -60,15 +62,15 @@ namespace _22_8_5_BTNHom_Mail
             // 
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(1, 274);
+            this.listBox1.Location = new System.Drawing.Point(29, 472);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(287, 164);
+            this.listBox1.Size = new System.Drawing.Size(426, 212);
             this.listBox1.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(41, 20);
+            this.label1.Location = new System.Drawing.Point(36, 251);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(75, 17);
             this.label1.TabIndex = 3;
@@ -76,14 +78,14 @@ namespace _22_8_5_BTNHom_Mail
             // 
             // txb_UserName
             // 
-            this.txb_UserName.Location = new System.Drawing.Point(188, 17);
+            this.txb_UserName.Location = new System.Drawing.Point(160, 248);
             this.txb_UserName.Name = "txb_UserName";
             this.txb_UserName.Size = new System.Drawing.Size(278, 22);
             this.txb_UserName.TabIndex = 4;
             // 
             // txb_PassWord
             // 
-            this.txb_PassWord.Location = new System.Drawing.Point(188, 63);
+            this.txb_PassWord.Location = new System.Drawing.Point(160, 293);
             this.txb_PassWord.Name = "txb_PassWord";
             this.txb_PassWord.Size = new System.Drawing.Size(278, 22);
             this.txb_PassWord.TabIndex = 6;
@@ -91,7 +93,7 @@ namespace _22_8_5_BTNHom_Mail
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(41, 66);
+            this.label2.Location = new System.Drawing.Point(36, 296);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 17);
             this.label2.TabIndex = 5;
@@ -99,7 +101,7 @@ namespace _22_8_5_BTNHom_Mail
             // 
             // btn_Inbox
             // 
-            this.btn_Inbox.Location = new System.Drawing.Point(673, 43);
+            this.btn_Inbox.Location = new System.Drawing.Point(160, 412);
             this.btn_Inbox.Name = "btn_Inbox";
             this.btn_Inbox.Size = new System.Drawing.Size(155, 40);
             this.btn_Inbox.TabIndex = 7;
@@ -109,7 +111,7 @@ namespace _22_8_5_BTNHom_Mail
             // 
             // txb_ToatalMessage
             // 
-            this.txb_ToatalMessage.Location = new System.Drawing.Point(188, 126);
+            this.txb_ToatalMessage.Location = new System.Drawing.Point(160, 335);
             this.txb_ToatalMessage.Name = "txb_ToatalMessage";
             this.txb_ToatalMessage.ReadOnly = true;
             this.txb_ToatalMessage.Size = new System.Drawing.Size(100, 22);
@@ -117,7 +119,7 @@ namespace _22_8_5_BTNHom_Mail
             // 
             // txb_RecentMessage
             // 
-            this.txb_RecentMessage.Location = new System.Drawing.Point(188, 193);
+            this.txb_RecentMessage.Location = new System.Drawing.Point(160, 381);
             this.txb_RecentMessage.Name = "txb_RecentMessage";
             this.txb_RecentMessage.ReadOnly = true;
             this.txb_RecentMessage.Size = new System.Drawing.Size(100, 22);
@@ -126,7 +128,7 @@ namespace _22_8_5_BTNHom_Mail
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(53, 126);
+            this.label3.Location = new System.Drawing.Point(36, 338);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(101, 17);
             this.label3.TabIndex = 10;
@@ -135,7 +137,7 @@ namespace _22_8_5_BTNHom_Mail
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(53, 193);
+            this.label4.Location = new System.Drawing.Point(36, 384);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(114, 17);
             this.label4.TabIndex = 11;
@@ -143,17 +145,28 @@ namespace _22_8_5_BTNHom_Mail
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(647, 139);
+            this.richTextBox1.Location = new System.Drawing.Point(530, 251);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(229, 253);
+            this.richTextBox1.Size = new System.Drawing.Size(552, 404);
             this.richTextBox1.TabIndex = 12;
             this.richTextBox1.Text = "";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::_22_8_5_BTNHom_Mail.Properties.Resources.Inbox;
+            this.pictureBox1.Location = new System.Drawing.Point(466, 13);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(225, 202);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
             // 
             // Inbox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1123, 607);
+            this.ClientSize = new System.Drawing.Size(1123, 701);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -168,8 +181,8 @@ namespace _22_8_5_BTNHom_Mail
             this.Controls.Add(this.btn_Exit);
             this.Name = "Inbox";
             this.Text = "Inbox";
-            this.Load += new System.EventHandler(this.Inbox_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -190,5 +203,6 @@ namespace _22_8_5_BTNHom_Mail
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

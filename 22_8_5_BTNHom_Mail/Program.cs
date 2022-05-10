@@ -16,7 +16,7 @@ namespace _22_8_5_BTNHom_Mail
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new SendMail());
         }
     }
 }

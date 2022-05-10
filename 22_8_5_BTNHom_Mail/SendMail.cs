@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 using System.Net.Mail;
 using System.Net;
 using System.IO;
@@ -16,15 +15,11 @@ using System.IO;
 
 namespace _22_8_5_BTNHom_Mail
 {
-    public partial class Form1 : Form
+    public partial class SendMail : Form
     {
-        public Form1()
+        public SendMail()
         {
             InitializeComponent();
-        }
-
-        private void txb_Sender_TextChanged(object sender, EventArgs e)
-        {
         }
 
         private void btn_Send_Click(object sender, EventArgs e)
@@ -38,7 +33,7 @@ namespace _22_8_5_BTNHom_Mail
 
                     MailMessage message = new MailMessage(txb_Sender.Text, txb_Receiver.Text);
                     message.Subject = txb_Subject.Text;
-                    message.Body = txb_Receiver.Text;
+                    message.Body = txb_Body.Text;
 
                     
 
@@ -56,17 +51,12 @@ namespace _22_8_5_BTNHom_Mail
                     }
 
                     mailclient.Send(message);
-                    MessageBox.Show("Mail đã được gửi đi", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Đã gửi mail thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-                catch (Exception ex)
+                catch (Exception)
                 {
-                    MessageBox.Show( "Error","Thong bao", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show( "Đã xảy ra lỗi, mail đã không được gửi đi!","Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void btn_AttachFile_Click(object sender, EventArgs e)
@@ -85,10 +75,9 @@ namespace _22_8_5_BTNHom_Mail
             }
 
         }
-
         private void btn_Inbox_Click(object sender, EventArgs e)
         {
-            Inbox ib = new Inbox();
+            Inbox ib = new Inbox(txb_Sender.Text, txb_PassWord.Text);
             ib.Show();
         }
 

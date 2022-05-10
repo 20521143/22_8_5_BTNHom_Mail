@@ -7,9 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
-
-
 using MimeKit;
 using MailKit;
 using MailKit.Search;
@@ -25,18 +22,11 @@ namespace _22_8_5_BTNHom_Mail
             InitializeComponent();
         }
 
-        private void Inbox_Load(object sender, EventArgs e)
+        public Inbox(string a, string b): this()
         {
-
+            txb_UserName.Text = a;
+            txb_PassWord.Text = b;
         }
-
-        
-
-
-
-
-
-
         private void btn_Inbox_Click(object sender, EventArgs e)
         {
             
@@ -44,17 +34,13 @@ namespace _22_8_5_BTNHom_Mail
                 {
                    
                         client.Connect("imap.gmail.com", 993, true);
+                        client.Authenticate(txb_UserName.Text, txb_PassWord.Text);
+                    
+                        var folder = client.GetFolder(new FolderNamespace('.', ""));
 
-                        
-
-
-                    //client.Authenticate(txb_UserName.Text, txb_PassWord.Text);
-                    client.Authenticate("nguyenthanhlong012002@gmail.com", "Cong@$1412");
-                    var folder = client.GetFolder(new FolderNamespace('.', ""));
-
-
-                    // The Inbox folder is always available on all IMAP servers...
-                    var inbox = client.Inbox;
+                    
+                        // The Inbox folder is always available on all IMAP servers...
+                        var inbox = client.Inbox;
                         inbox.Open(FolderAccess.ReadOnly);
 
                         txb_ToatalMessage.Text = inbox.Count.ToString();
@@ -71,7 +57,7 @@ namespace _22_8_5_BTNHom_Mail
                             //Console.WriteLine("Subject: {0}", message.Subject);
                         }
                    
-                         client.Disconnect(true);
+                        client.Disconnect(true);
 
                 }
             
@@ -88,7 +74,7 @@ namespace _22_8_5_BTNHom_Mail
             {
                 client.Connect("imap.gmail.com", 993, SecureSocketOptions.SslOnConnect);
 
-                client.Authenticate("nguyenthanhlong012002@gmail.com", "Cong@$1412");
+                client.Authenticate("kakaka.com.vn@gmail.com", "kakakakaka");
 
                 client.Inbox.Open(FolderAccess.ReadOnly);
 
@@ -102,7 +88,6 @@ namespace _22_8_5_BTNHom_Mail
                     message.WriteTo(string.Format("{0}.eml", uid));
                     
                 }
-
                 client.Disconnect(true);
             }
         }
